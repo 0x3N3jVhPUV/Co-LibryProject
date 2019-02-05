@@ -10,32 +10,32 @@ module.exports = function validateRegisterInput(data) {
     data.password2 = !isEmpty(data.password2) ? data.password2 : '';
 
     if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
-        errors.name = 'Name must be between 2 and 30 characters';
+        errors.name = 'Le nom doit avoir entre 2 à 30 characters';
     }
 
     if (Validator.isEmpty(data.name)) {
-        errors.name = 'Name field is required';
+        errors.name = 'Vous devez rentrer votre nom.';
     }
 
-    if (Validator.isEmpty(data.email)) {
-        errors.email = 'Email field is required';
-    }
     if (!Validator.isEmail(data.email)) {
-        errors.email = 'Email is invalid';
+        errors.email = 'Cette email est incorrect';
+    }
+    if (Validator.isEmpty(data.email)) {
+        errors.email = 'Vous devez rentrer votre email.';
     }
 
-    if (Validator.isEmpty(data.password)) {
-        errors.password = 'Password field is required';
-    }
     if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-        errors.password = 'Password must be at least 6 characters';
+        errors.password = 'Le mot de passe doit avoir au moins 6 characters';
+    }
+    if (Validator.isEmpty(data.password)) {
+        errors.password = 'Vous devez rentrer un mot de passe.';
     }
 
-    if (Validator.isEmpty(data.password2)) {
-        errors.password2 = 'Confirm password field is required';
-    }
     if (!Validator.equals(data.password, data.password2)) {
-        errors.password2 = 'Passwords must match';
+        errors.password2 = 'Les mots de passe ne sont pas identiques.';
+    }
+    if (Validator.isEmpty(data.password2)) {
+        errors.password2 = 'Vous devez confirmer votre mot de passe.';
     }
 
     return {
