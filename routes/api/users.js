@@ -79,7 +79,7 @@ router.post('/login', (req, res) => {
         .then(user => {
             //Check for user
             if(!user) {
-                errors.email = 'User not found';
+                errors.email = "Ce compte n'existe pas.";
                 return res.status(404).json(errors);
             }
 
@@ -102,7 +102,7 @@ router.post('/login', (req, res) => {
                                 });
                         });
                     }else{
-                        errors.password = 'Password incorrect'; 
+                        errors.password = 'Mot de passe incorrect.'; 
                         return res.status(400).json(errors);
                     }
                 });
