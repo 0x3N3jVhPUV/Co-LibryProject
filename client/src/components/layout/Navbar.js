@@ -59,7 +59,8 @@ class Navbar extends Component {
                         <li className="nav-item">
                             <Link className="nav-link" to="/carrier"> Transporter un colis</Link>
                         </li>
-                        <Link className="nav-link" to="/sender"> Envoyer un colis</Link>
+                            <Link className="nav-link" to="/sender"> Envoyer un colis</Link>
+                            <Link className="nav-link" to="/profile"> Communauté</Link>
                     </ul>
                     {isAuthenticated ? authLinks : guestLinks}
                 </div>
