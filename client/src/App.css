@@ -138,6 +138,13 @@ body{
   text-decoration: none;
 }
 
+.table{
+  /*background: #34b3a0;
+  color:#fff;*/
+  font-size:1.2rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
 .section{
   padding:20px 0;
 }
@@ -153,3 +160,4 @@ body{
     padding-left:3rem;
   }
 }
+
