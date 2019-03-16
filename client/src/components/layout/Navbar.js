@@ -16,7 +16,10 @@ class Navbar extends Component {
       const { isAuthenticated, user } = this.props.auth;
 
       const authLinks = (
-          <ul className="navbar-nav ml-auto"> 
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+                <Link className="nav-link" to="/feed">Créer un projet</Link>
+            </li>            
             <li className="nav-item">
                 <Link className="nav-link" to="/dashboard">Mon profile</Link>
             </li>            
@@ -61,7 +64,7 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="mobile-nav">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/carrier"> Développeurs</Link>
+                            <Link className="nav-link" to="/profiles"> Développeurs</Link>
                         </li>
                     </ul>
                     {isAuthenticated ? authLinks : guestLinks}

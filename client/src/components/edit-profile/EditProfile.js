@@ -130,7 +130,7 @@ class CreateProfile extends Component {
 
           <InputGroup
             placeholder="facebook Profile URL"
-            name="faceboojk"
+            name="facebook"
             icon="fab fa-facebook"
             value={this.state.facebook}
             onChange={this.onChange}

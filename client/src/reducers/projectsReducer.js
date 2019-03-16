@@ -1,35 +1,40 @@
-import { GET_PROFILE, GET_PROFILES, PROFILE_LOADING, CLEAR_CURRENT_PROFILE } from '../actions/types';
+import { GET_PROJECT, GET_PROJECTS, PROJECT_LOADING, ADD_PROJECT, DELETE_PROJECT } from '../actions/types';
 //import { bindActionCreators } from '../../../../../AppData/Local/Microsoft/TypeScript/3.3/node_modules/redux';
 
 const initialState = {
-    profile: null,
-    profiles: null,
+    projects: [],
+    project: {},
     loading: false
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case PROFILE_LOADING:
+        case PROJECT_LOADING:
             return {
                 ...state,
                 loading: true
             };
-        case GET_PROFILE:
+        case GET_PROJECT:
             return {
                 ...state,
-                profile: action.payload,
+                project: action.payload,
                 loading: false
             };
-        case GET_PROFILES:
+        case GET_PROJECTS:
             return {
                 ...state,
-                profiles: action.payload,
+                projects: action.payload,
                 loading: false
             };
-        case CLEAR_CURRENT_PROFILE:
+        case ADD_PROJECT:
             return {
                 ...state,
-                profile: null,
+                project: null,
+            };
+        case DELETE_PROJECT:
+            return {
+                ...state,
+                project: null,
             };    
         default:
             return state;

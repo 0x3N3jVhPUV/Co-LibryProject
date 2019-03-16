@@ -20,6 +20,10 @@ import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
 import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
+import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
+import NotFound from './components/not-found/NotFound';
+import Projects from './components/projects/Projects';
 
 import './App.css';
 
@@ -60,6 +64,10 @@ class App extends Component {
               <Route exact path="/edit-profile" component={EditProfile} />
               <Route exact path="/add-experience" component={AddExperience} />
               <Route exact path="/add-education" component={AddEducation} />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:handle" component={Profile} />
+              <Route exact path="/not-found" component={NotFound} />
+              <Route exact path="/feed" component={Projects} />
             </div>
             <Footer />
           </div>

@@ -7,3 +7,10 @@ export const PROFILE_NOT_FOUND = 'PROFILE_NOT_FOUND';
 export const CLEAR_CURRENT_PROFILE = 'CLEAR_CURRENT_PROFILE';
 export const GET_PROFILES = 'GET_PROFILES';
 //------------------------------------------------------------
+export const PROJECT_LOADING = 'PROJECT_LOADING';
+export const GET_PROJECT = 'GET_PROJECT';
+export const GET_PROJECTS = 'GET_PROJECTS';
+export const ADD_PROJECT = 'ADD_PROJECT';
+export const DELETE_PROJECT = 'DELETE_PROJECT';
+//export const PROJECT_NOT_FOUND = 'PROJECT_NOT_FOUND';
+//export const CLEAR_CURRENT_PROJECT = 'CLEAR_CURRENT_PROJECT';

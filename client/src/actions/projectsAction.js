@@ -1,16 +1,36 @@
-import axios from "axios";
-//import { logoutUser } from "../actions/authActions";
+import axios from 'axios';
 
-import { 
-    GET_PROFILE, 
-    GET_ERRORS, 
-    PROFILE_LOADING, 
-    CLEAR_CURRENT_PROFILE,
-    SET_CURRENT_USER,
-    GET_PROFILES
+import {
+    GET_PROJECT,
+    GET_PROJECTS,
+    ADD_PROJECT,
+    GET_ERRORS,
+    PROJECT_LOADING,
+    //CLEAR_CURRENT_PROFILE,
+    //SET_CURRENT_USER
 } from './types'
-import { logoutUser } from "./authActions";
 
+//import { logoutUser } from "./authActions";
+
+// Add Project
+export const addProject = projectData => dispatch => {
+    axios
+        .post('/api/projects', projectData)
+        .then(res => 
+            dispatch({
+                type: ADD_PROJECT,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        );
+}
+
+/*
 //Get current profile
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading());
@@ -20,11 +40,11 @@ export const getCurrentProfile = () => dispatch => {
                 type: GET_PROFILE,
                 payload: res.data
             }))
-            .catch(err => 
-                dispatch({
-                    type: GET_PROFILE,
-                    payload: {}
-                }));
+        .catch(err =>
+            dispatch({
+                type: GET_PROFILE,
+                payload: {}
+            }));
 }
 
 //Get profile by handle
@@ -89,7 +109,7 @@ export const addEducation = (eduData, history) => dispatch => {
 export const deleteExperience = (id) => dispatch => {
     axios
         .delete(`/api/profile/experience/${id}`)
-        .then(res => 
+        .then(res =>
             dispatch({
                 type: GET_PROFILE,
                 payload: res.data
@@ -156,7 +176,7 @@ export const deleteAccount = () => dispatch => {
                     type: SET_CURRENT_USER,
                     payload: {}
                 }))
-            .catch(err => 
+            .catch(err =>
                 dispatch({
                     type: GET_ERRORS,
                     payload: err.response.data
@@ -177,4 +197,4 @@ export const clearCurrentProfile = () => {
         type: CLEAR_CURRENT_PROFILE
     };
 };
-
+*/
